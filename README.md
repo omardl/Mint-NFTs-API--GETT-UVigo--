@@ -1,4 +1,7 @@
-# NFTMintingAPP
+# Segundo royecto de la asignatura Nuevos Servicios Telemáticos (4º curso, rama telemática) del GETT de la Universidad de Vigo
+
+
+## NFTMintingAPP
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
