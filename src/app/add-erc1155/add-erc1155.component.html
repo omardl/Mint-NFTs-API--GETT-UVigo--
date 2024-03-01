@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="toolbar" role="banner">
+        <img src="assets/img/logo-uvigo.png" height="50" width="50" />
+        <span> UVigo - NST </span>    
+    </div>
+
+    <form style="margin-top: 40px;" [formGroup]="form_1155">
+        <div class="items">
+            <div [@floatInSpace] class="neon-text">
+                <p> Item 1 </p>
+                <p> Owned: {{amountItem1}}/1 </p>
+                <div *ngIf="someItem1; else itemNone1">
+                    <img [src]="imgItem1" alt="NFT Image" style="width: 100px; height: 100px;">
+                </div>
+                <div>
+                    <ng-template #itemNone1>
+                        <img src="assets/img/empty1.jpg" alt="False Image" style="width: 100px; height: 100px;">
+                    </ng-template>
+                </div>
+                <label class="neon-text-mini" for="type1"> Max amount per mint: 1 </label>
+                
+                <p class="neon-text-mini" for="type1"> Mint: <input style="width: 45px;" type="number" id="type1" formControlName="type1"/> </p>
+            </div>
+
+            <div [@floatInSpace] class="neon-text">
+                <p> Item 2 </p>
+                <p> Owned: {{amountItem2}}/100 </p>
+                <div *ngIf="someItem2; else itemNone2">
+                    <img [src]="imgItem2" alt="NFT Image" style="width: 100px; height: 100px;">
+                </div>
+                <div>
+                    <ng-template #itemNone2>
+                        <img src="assets/img/empty1.jpg" alt="False Image" style="width: 100px; height: 100px;">
+                    </ng-template>
+                </div>
+                <label class="neon-text-mini" for="type2"> Max amount per mint: 10 </label>
+                
+                <p class="neon-text-mini" for="type2"> Mint: <input style="width: 45px;" type="number" id="type2" formControlName="type2"/> </p>
+            </div>
+
+            <div [@floatInSpace] class="neon-text">
+                <p> Item 3 </p>
+                <p> Owned: {{amountItem3}}/1000 </p>
+                <div *ngIf="someItem3; else itemNone3">
+                    <img [src]="imgItem3" alt="NFT Image" style="width: 100px; height: 100px;">
+                </div>
+                <div>
+                    <ng-template #itemNone3>
+                        <img src="assets/img/empty1.jpg" alt="False Image" style="width: 100px; height: 100px;">
+                    </ng-template>
+                </div>
+                <label class="neon-text-mini" for="type3"> Max amount per mint: 100 </label>
+                
+                <p class="neon-text-mini" for="type3"> Mint: <input style="width: 45px;" type="number" id="type3" formControlName="type3"/> </p>
+            </div>
+
+            <div [@floatInSpace] class="neon-text">
+                <p> Item 4 </p>
+                <p> Owned: {{amountItem4}}/10000 </p>
+                <div *ngIf="someItem4; else itemNone4">
+                    <img [src]="imgItem4" alt="NFT Image" style="width: 100px; height: 100px;">
+                </div>
+                <div>
+                    <ng-template #itemNone4>
+                        <img src="assets/img/empty1.jpg" alt="False Image" style="width: 100px; height: 100px;">
+                    </ng-template>
+                </div>
+                <label class="neon-text-mini" for="type4"> Max amount per mint: 1000 </label>
+                
+                <p class="neon-text-mini" for="type4"> Mint: <input style="width: 45px;" type="number" id="type4" formControlName="type4"/> </p>              
+            </div>  
+        </div>
+    </form>
+</div>
+<div class="neon-text" *ngIf="err"> 
+    <p> {{ err_msg }} </p>
+</div>
+<div [@floatInSpace] class="buttons">
+    <a class="bn" (click)="onSubmit()"> <span class="bnspan"> Mint </span> </a>
+</div>
+

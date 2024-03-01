@@ -1,0 +1,116 @@
+<div class="global-container">
+
+  <div class="toolbar" role="banner">
+    <img src="assets/img/logo-uvigo.png" height="50" width="50" />
+    <span> UVigo - NST </span>    
+  </div>
+  
+  <div style="margin-top: 80px;" class="vertical-divs">
+
+    <form [formGroup]="form_721">
+      <div [@floatInSpace] class='neon-div'>
+        <table style="display: flex; justify-content: center; align-items: center;">
+          <tbody>
+            <tr>
+              <td>
+                <h2 style="text-align: center; margin-bottom: 0px;" class="neon-text"> <u>NFT data</u> </h2>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <div class="neon-text neon-text-mini"> 
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label for="name"> Name: </label>  
+                        </td>
+                        <td>
+                          <input style="width: 110px; height: 4px;" type="text" id="name" formControlName="name" /> 
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="description"> Description: </label>
+                        </td>
+                        <td>
+                          <input style="width: 110px; height: 4px;" type="text" id="description" formControlName="description" />
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <h2 class="neon-text" style="text-align: center; margin-top: 20px; margin-bottom: 10px;"> <u>NFT metadata attributes</u>  </h2>
+        <div class="buttons">
+          <button class="addbt" mat-mini-fab (click)="addAttribute()">
+            <mat-icon class="add-course-btn"> add </mat-icon>
+            <span> Add attribute </span>
+          </button>
+        </div>
+        <div class="neon-text neon-text-mini" formArrayName="attributes"> 
+          <div *ngFor="let property of Attributes.controls; let i = index" [formGroupName]="i">
+              <table style="display: flex; justify-content: center; align-items: center;">
+                <tbody>
+                  <tr>
+                    <td>
+                      <table>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <label for="trait_type">Attribute name:</label>
+                            </td>
+                            <td>
+                              <input style="width: 110px; height: 4px;" type="text" id="trait_type" formControlName="trait_type"/>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <label for="value">Attribute description:</label>
+                            </td>
+                            <td>
+                              <input style="width: 110px; height: 4px;" type="text" id="value" formControlName="value"/> 
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                    <td style="margin-left: 1000px;">
+                      <mat-icon class="add-course-btn" (click)="deleteAttribute(i)"> delete_forever </mat-icon>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </form>     
+
+    <div class='neon-div' [@floatInSpace]>
+      <h2 class="neon-text" style="text-align: center;"> <u>   NFT image   </u> </h2>
+        <div class="buttons" style="margin-bottom: 18px;">
+          <input class="addbt" type="file" id="image" accept="image/*" (change)="onFileSelected($event)" />
+        </div>
+        <div class="buttons" style="margin-bottom: 14px;">
+          <button class="addbt" type="button" (click)="uploadImage()"> Upload image </button>
+        </div>
+        <div *ngIf="isUploaded" style="text-align: center;" class="neon-text neon-text-mini">
+            IPFS hash of your image is: {{ image_hash }}
+        </div>
+    </div>
+
+    <div [@floatInSpace] class="buttons" style="margin-top: 30px; margin-bottom: 60px;">
+      <ng-container *ngIf="isUploaded; else showParagraph">
+        <a class="bn721" (click)="onSubmit()" > <span class="bn721span"> Mint NFT </span> </a>
+      </ng-container>
+      <ng-template #showParagraph>
+        <p class="neon-text neon-text-mini"> You need to upload an image to mint a NFT! </p>
+      </ng-template>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div [@floatInSpace] class="global-container" style="margin-top: 10px;">
+
+  <div class="toolbar" role="banner">
+    <img src="assets/img/logo-uvigo.png" height="50" width="50" />
+    <span> UVigo - NST </span>   
+  </div>
+  
+  <table style="margin-top: 80px;" *ngIf="nfts && nfts.length > 0">
+    <thead>
+      <td colspan="2">
+        <h2 class="neon-text" style="text-align: center; margin-bottom: 0px; text-transform: uppercase;"> <u>Your NFTs</u></h2>
+      </td>
+    </thead>
+    <tbody *ngFor="let nft of nfts">
+      <tr>
+        <td> <img [src]="nft.image_url" alt="NFT Image" style="width: 100px; height: 100px;"> </td>
+        <td>
+          <ul>
+            <div class="neon-text neon-text-mini">
+              <li>            
+                <p class="max-char-per-line"> <strong>  <u> NAME</u>: </strong> {{ nft.name }}</p>
+              </li>
+            </div>
+            
+            <div class="neon-text neon-text-mini">
+              <li>
+                <p class="max-char-per-line"> <strong> <u> DESCRIPTION</u>: </strong> {{ nft.description }}</p>
+              </li>
+            </div>
+
+            <div class="neon-text neon-text-mini">
+              <li>     
+                <p class="max-char-per-line"> <strong>  <u> TOKEN ID</u>: </strong> {{ nft.identifier }}</p>
+              </li>
+            </div>
+
+            <div class="neon-text neon-text-mini">
+              <li>     
+                <p class="max-char-per-line"> <strong>  <u> METADATA URL</u>: </strong> <a class="neon-text neon-text-mini" style="text-decoration: none;" href="{{nft.metadata_url}}"> {{ nft.metadata_url }} </a></p>
+              </li>
+            </div>
+
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="neon-text" style="text-transform: uppercase;" *ngIf="!nfts || nfts.length === 0">
+    <p>No NFTs found in your MetaMask account.</p>
+  </div>
+</div>

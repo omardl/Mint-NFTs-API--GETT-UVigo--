@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+ import { Component, NgZone } from '@angular/core';
+ import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'NFT-minting-APP';
+  
+  constructor (
+    private ngZone: NgZone, 
+    private router: Router
+  ) { }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData && outlet.activatedRouteData['animationState'];
+  }
+
+  ngOnInit () {
+    this.ngZone.run(() => this.router.navigateByUrl('/home'));
+  }
+
 }
+

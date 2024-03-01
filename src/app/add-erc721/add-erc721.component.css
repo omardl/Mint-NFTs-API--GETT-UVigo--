@@ -1,0 +1,214 @@
+body, html{
+  width: 100%;
+  height: 100%;
+}
+
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.global-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 500vh;
+  overflow: auto;
+}
+
+.navbar {
+  background-color:transparent; 
+  backdrop-filter: blur(60px); 
+  border: 1px solid rgb(255, 255, 255); 
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  backdrop-filter: blur(60px);
+  box-shadow: 0px 2px 4px #0c0d13;
+  border-bottom: 2px solid #0d1d31;
+  font-weight: 600;
+  color: white;
+}
+
+.toolbar img {
+  margin: 0 16px;
+  border-radius: 50%;
+}
+
+/************************************/
+/*********** NEON STUFF ************/
+/************************************/
+  
+.neon-text {
+  text-align: left;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #94ebfd;
+  text-shadow: 0 0 10px #94ebfd, 0 0 20px #0291ae;
+  animation: neon-glow 1.5s infinite alternate;
+}
+
+.neon-text-mini {
+  margin-top: 8px;
+  font-size: 8px;
+}
+
+.neon-div {
+  align-items: center;
+  text-align: center;
+  display: inline-block;
+  width: 350px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #94ebfd, 0 0 20px #0291ae, 0 0 30px #034754;
+  /* box-shadow: 0 0 10px #6f01ff, 0 0 20px #6f01ff, 0 0 30px #6f01ff, 0 0 40px #500046, 0 0 50px #500046, 0 0 60px #500046, 0 0 70px #500046;*/
+  animation: neon-glow 1.5s infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+      text-shadow: 0 0 10px #034754, 0 0 20px #0291ae, 0 0 30px #94ebfd;
+  }
+  to {
+      text-shadow: 0 0 10px #0291ae, 0 0 20px #94ebfd, 0 0 30px #ffffff;
+  }
+}
+
+.horizontal-divs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.vertical-divs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+/***********************************/
+/*********** FORM STUFF ************/
+/***********************************/
+
+
+input {
+  margin-top: 2px;
+  margin-bottom: 12px;
+  padding: 8px;
+  font-size: 12px;
+  border: 3px solid #0291ae;
+  border-radius: 5px;
+  color: #333;
+}
+
+/************************************/
+/*********** MAT BUTTONS ************/
+/************************************/
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.addbt {
+  background-color: transparent; 
+  border: 2px solid #94ebfd; 
+  color: #94ebfd; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes neon-bt {
+  0% {
+    box-shadow: 0 0 5px 2px #00f0ff;
+  }
+  100% {
+      box-shadow: 0 0 10px 5px #00f0ff; 
+  }
+
+}
+
+.addbt:hover {
+  animation: neon-bt 1.5s infinite; 
+}
+
+.addbt mat-icon {
+  font-size: 24px;
+}
+
+
+.bn721 {
+  background-image: linear-gradient(to right, #034754 0%, #94ebfd 100%);
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: #94ebfd;
+  display: block;
+  height: 50px;
+  font-size: 1.4em;
+  padding: 4px;
+  position: relative;
+  text-decoration: none;
+  width: 7em;
+  z-index: 2;
+  box-shadow: 0 0 10px #034754, 0 0 20px #94ebfd;
+  animation: neon-glow-submit 1.5s infinite alternate;
+}
+
+@keyframes neon-glow-submit {
+  from {
+      text-shadow: 0 0 10px #034754, 0 0 20px #0291ae, 0 0 30px #94ebfd;
+  }
+  to {
+      text-shadow: 0 0 10px #0291ae, 0 0 20px #94ebfd, 0 0 30px #ffffff;
+  }
+}
+
+.bn721:hover {
+  color: #fff;
+}
+
+.bn721 .bn721span {
+  align-items: center;
+  background: #0e0e10;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  transition: background 0.5s ease;
+  width: 100%;
+}
+
+.bn721:hover .bn721span {
+  background: transparent;
+}
+
+
+  
