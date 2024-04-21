@@ -43,7 +43,7 @@ El estándar ERC 1155 define la creación y las funciones a las que están sujet
 
 Otros de los posibles usos de este tipo de token, a mayores de las criptomonedas, pueden servir para definir items asociados al coleccionismo digital o a videojuegos online, permitiendo crear una cantidad concreta de items del mismo tipo que deba ser repartida entre todos los usuarios.
 
-![Mint ERC 1155 token](https://github.com/omardl/Minting-NFTs-API--NST-GETT-UVigo--/assets/105445540/f621767d-612e-440b-bffa-ee19eb7c61bd)
+![Mint ERC 1155 tokens](https://github.com/omardl/Minting-NFTs-API--NST-GETT-UVigo--/assets/105445540/b16a0b73-91ae-4d9a-8b78-a39024121b89)
 
 En la API desarrollada, se ha usado a modo de ejemplo un contrato que permite 4 diferentes tipos de tokens. Éstos están limitados a un número máximo que cada usuario puede poseer de cada tipo, y también un máximo de la cantidad que puede mintear a la vez. Cabe apreciar que, si se limita la cantidad de tokens a 1 de manera global (sólo sería propiedad de un usuario exclusivo), tendría un funcionamiento similar a un NFT.
 
@@ -61,9 +61,7 @@ Por otro lado, el uso de cualquier función dentro de un smart contract está li
 
 Existen diferentes plataformas que permiten ver los tokens de una colección. Plataformas como OpenSea, pueden ser usadas para buscar tokens asociados a un usuario concreto o a un smart contract específico. La API desarrollada realiza llamadas precisamente a la API de OpenSea para obtener los tokens asociados a la cartera del usuario. 
 
-![See tokens](https://github.com/omardl/Minting-NFTs-API--NST-GETT-UVigo--/assets/105445540/fbdf6044-3cb6-45aa-b941-4318fd7b802f)
-
-### APIs externas
+![Visualizing tokens](https://github.com/omardl/Minting-NFTs-API--NST-GETT-UVigo--/assets/105445540/902b7d68-a0c8-4bb3-b547-9680e1a9fb75)
 
 ------------
 
