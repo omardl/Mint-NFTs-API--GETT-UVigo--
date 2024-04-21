@@ -29,7 +29,7 @@ Las ventajas de los NFTs pueden tener diversas aplicaciones en el mundo actual:
 - La representación de derechos de autor de cualquier obra artística o cultural: cine, música, arte, literatura, etc.
 - El seguimiento y la logística de transporte para una gran variedad de artículos.
 
-## IPFS
+### IPFS
 
 Los metadatos (en formato json, tal como define el estándar) e imágenes asociadas a los NFTs, están almacenadas en un sistema de archivos distribuído llamado IPFS (Interplanetary File System). Éste permite el almacenamiento de datos de manera fiable y asegurando su integridad mediante funciones hash. La API desarrollada realiza llamadas a una API externa denominada pinata que permite el almacenamiento en IPFS.
 
